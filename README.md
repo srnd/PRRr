@@ -1,1 +1,1 @@
-![](PRRr_logo.png)
+![](static/PRRr_logo.png)
