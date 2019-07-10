@@ -1,2 +1,1 @@
-# mattermost-code-review
-Mattermost bot for code review.
+![](PRRr_logo.png)
