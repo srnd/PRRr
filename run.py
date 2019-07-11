@@ -22,6 +22,10 @@ def authorized(oauth_token):
         return render_template('error.html',errors=["Error authenticating, please try again or contact Zeke for "
                                                     "assistance"])
     else:
+        try:
+            gh(oauth_token)
+        except Exception as e:
+            return render_template('error.html',errors=["Unkown error with authentication token ({})".format(e)])
         session['token'] = oauth_token
         return redirect('/dashboard')
 
