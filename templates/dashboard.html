@@ -30,9 +30,9 @@
     {% set user = github.get_user() %}
     <h1>Successfully authorized with GitHub!</h1>
     {% if user.private_repos %}
-        <p>Logged in as: {{user.name}} with {{user.public_repos  + user.private_repos}} repos.</p> <!-- Prevent undefined error -->
+        <p>Logged in as: {{user.login}} with {{user.public_repos  + user.private_repos}} repos.</p> <!-- Prevent undefined error -->
     {% else %}
-        <p>Logged in as: {{user.name}} with {{user.public_repos}} repos.</p>
+        <p>Logged in as: {{user.login}} with {{user.public_repos}} repos.</p>
     {% endif %}
 </body>
 </html>
