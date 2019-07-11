@@ -15,7 +15,7 @@ def login():
     return github.authorize()
 
 
-@app.route('/github-callback')
+@app.route('/oauth')
 @github.authorized_handler
 def authorized(oauth_token):
     if oauth_token is None:
