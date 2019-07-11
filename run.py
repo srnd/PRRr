@@ -19,7 +19,8 @@ def login():
 @github.authorized_handler
 def authorized(oauth_token):
     if oauth_token is None:
-        return render_template('error.html',errors=["Error authenticating, please try again or contact Zeke for assistance"])
+        return render_template('error.html',errors=["Error authenticating, please try again or contact Zeke for "
+                                                    "assistance"])
     else:
         session['token'] = oauth_token
         return redirect('/dashboard')
