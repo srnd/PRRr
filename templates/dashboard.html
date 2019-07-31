@@ -28,11 +28,15 @@
 </head>
 <body>
     {% set user = github.get_user() %}
+    {% set orgs = user.get_orgs() %}
+    {% set repos = user.get_repos() %}
     <h1>Successfully authorized with GitHub!</h1>
-    {% if user.private_repos %}
-        <p>Logged in as: {{user.login}} with {{user.public_repos  + user.private_repos}} repos.</p> <!-- Prevent undefined error -->
-    {% else %}
-        <p>Logged in as: {{user.login}} with {{user.public_repos}} repos.</p>
-    {% endif %}
+    <p>Logged in as: {{user.login}}.</p>
+    {% for org in orgs %}
+        {{org.login}}
+    {% endfor %}
+    {% for repo in repos %}
+        {{repo}}
+    {% endfor %}
 </body>
 </html>
